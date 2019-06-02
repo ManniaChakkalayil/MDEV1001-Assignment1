@@ -32,7 +32,7 @@ db.serialize(function(){
         console.log(row);
     }); 
 
-    //the total capacity available each department
+    //the total capacity available for each department
     db.each("SELECT Department.Dept_name, SUM(Capacity) as 'Total capacity' FROM Classroom NATURAL JOIN Department GROUP BY Department.Dept_name", function(err,row)
     {
         console.log(row);
